@@ -1055,13 +1055,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\SaturnCoin
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\SaturnCoin
-    // Mac: ~/Library/Application Support/SaturnCoin
-    // Unix: ~/.SaturnCoin
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Saturn2Coin
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Saturn2Coin
+    // Mac: ~/Library/Application Support/Saturn2Coin
+    // Unix: ~/.Saturn2Coin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "SaturnCoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Saturn2Coin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -1073,10 +1073,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "SaturnCoin";
+    return pathRet / "Saturn2Coin";
 #else
     // Unix
-    return pathRet / ".SaturnCoin";
+    return pathRet / ".Saturn2Coin";
 #endif
 #endif
 }
